@@ -1,0 +1,34 @@
+% !TeX root = ./main.tex
+% !TEX TS-program = xelatex
+
+\documentclass[russian,utf8,simple]{eskdtext}
+
+\newcommand{\No}{\textnumero}
+
+\renewcommand{\ESKDcolumnXfIname}{Студент}
+\renewcommand{\ESKDcolumnXfIIname}{Консульт.}
+\renewcommand{\ESKDcolumnXfVname}{Руковод.}
+\renewcommand{\ESKDcolumnXfVIname}{Н. контр.}
+
+% Меня это жутко раздражает. Из-за "ГОСТ"а моей шараги мой дип. рук стал норм.контролером.
+% Ох.еть
+
+\ESKDsignature{\textnormal{РКСИ.ВКР20.09.02.03.2297.00ПЗ}}
+\ESKDauthor{Леммер}
+\ESKDnormContr{Ляхов}
+
+\usepackage{fontspec}
+\usepackage{xecyr}
+\usepackage{graphicx}
+
+\graphicspath{{img/}}
+
+\setmainfont[Mapping=tex-text]{Times New Roman}
+\setsansfont[Mapping=tex-text]{Liberation Sans}
+\setmonofont[Mapping=tex-text]{Liberation Mono}
+
+\linespread{1.3}
+
+\begin{document}
+    \input{documents/toc}
+\end{document}
