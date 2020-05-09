@@ -3,6 +3,13 @@
 
 \documentclass[russian,utf8,simple]{eskdtext}
 
+\usepackage{fontspec}
+\usepackage{xecyr}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{titlesec}
+\usepackage{tocloft}
+
 \newcommand{\No}{\textnumero}
 
 \renewcommand{\ESKDcolumnXfIname}{Студент}
@@ -10,18 +17,15 @@
 \renewcommand{\ESKDcolumnXfVname}{Руковод.}
 \renewcommand{\ESKDcolumnXfVIname}{Н. контр.}
 
+\renewcommand{\cfttoctitlefont}{\hfill\normalfont}
+\renewcommand{\cftaftertoctitle}{\hfill\hfill}
+
 % Меня это жутко раздражает. Из-за "ГОСТ"а моей шараги мой дип. рук стал норм.контролером.
 % Ох.еть
 
 \ESKDsignature{\textnormal{РКСИ.ВКР20.09.02.03.2297.00ПЗ}}
 \ESKDauthor{Леммер}
 \ESKDnormContr{Ляхов}
-
-\usepackage{fontspec}
-\usepackage{xecyr}
-\usepackage{graphicx}
-\usepackage{amsmath}
-\usepackage{titlesec}
 
 \graphicspath{{img/}}
 
