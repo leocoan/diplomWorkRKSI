@@ -21,6 +21,7 @@
 \usepackage{xecyr}
 \usepackage{graphicx}
 \usepackage{amsmath}
+\usepackage{titlesec}
 
 \graphicspath{{img/}}
 
@@ -28,10 +29,14 @@
 \setsansfont[Mapping=tex-text]{Liberation Sans}
 \setmonofont[Mapping=tex-text]{Liberation Mono}
 
+\titleformat{\section}{\normalfont\normalsize}{\thesection.}{1em}{}
+
 \linespread{1.3}
 
 \begin{document}
     \input{documents/title}
     \newpage
     \input{documents/toc}
+    \newpage
+    \input{documents/collection_requirements}
 \end{document}
