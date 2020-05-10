@@ -9,8 +9,24 @@
 \usepackage{amsmath}
 \usepackage{titlesec}
 \usepackage{tocloft}
+\usepackage{eqexpl}
+\usepackage{longtable}
+
+\eqexplSetDelim{~--}
+\eqexplSetIntro{где}
+
+\sloppy
+
+\setcounter{tocdepth}{2}
+
+\setlength{\cftsubsecindent}{0cm}
+\setlength{\cftbeforesecskip}{0pt}
 
 \newcommand{\No}{\textnumero}
+
+% Thank: https://stackoverflow.com/questions/2785260/hide-an-entry-from-toc-in-latex
+\newcommand{\nocontentsline}[3]{}
+\newcommand{\tocless}[2]{\bgroup\let\addcontentsline=\nocontentsline#1{#2}\egroup}
 
 \renewcommand{\ESKDcolumnXfIname}{Студент}
 \renewcommand{\ESKDcolumnXfIIname}{Консульт.}
@@ -20,12 +36,19 @@
 \renewcommand{\cfttoctitlefont}{\hfill\normalfont}
 \renewcommand{\cftaftertoctitle}{\hfill\hfill}
 
+\renewcommand{\cftsecfont}{\normalfont}
+\renewcommand{\cftsecpagefont}{\normalfont}
+
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
 % Меня это жутко раздражает. Из-за "ГОСТ"а моей шараги мой дип. рук стал норм.контролером.
 % Ох.еть
 
 \ESKDsignature{\textnormal{РКСИ.ВКР20.09.02.03.2297.00ПЗ}}
 \ESKDauthor{Леммер}
 \ESKDnormContr{Ляхов}
+\ESKDchecker{Езепчук}
+\ESKDapprovedBy{Жабинская}
 
 \graphicspath{{img/}}
 
@@ -34,6 +57,8 @@
 \setmonofont[Mapping=tex-text]{Liberation Mono}
 
 \titleformat{\section}{\normalfont\normalsize}{\thesection.}{1em}{}
+\titleformat{\subsection}{\normalfont\normalsize}{\thesubsection.}{1em}{}
+\titleformat{\subsubsection}{\normalfont\normalsize}{\thesubsubsection.}{1em}{}
 
 \linespread{1.3}
 
@@ -43,4 +68,6 @@
     \input{documents/toc}
     \newpage
     \input{documents/collection_requirements}
+    \newpage
+    \input{documents/economic}
 \end{document}
