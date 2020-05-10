@@ -19,6 +19,9 @@
 
 \setcounter{tocdepth}{2}
 
+\setlength{\cftsubsecindent}{0cm}
+\setlength{\cftbeforesecskip}{0pt}
+
 \newcommand{\No}{\textnumero}
 
 % Thank: https://stackoverflow.com/questions/2785260/hide-an-entry-from-toc-in-latex
@@ -32,6 +35,11 @@
 
 \renewcommand{\cfttoctitlefont}{\hfill\normalfont}
 \renewcommand{\cftaftertoctitle}{\hfill\hfill}
+
+\renewcommand{\cftsecfont}{\normalfont}
+\renewcommand{\cftsecpagefont}{\normalfont}
+
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 
 % Меня это жутко раздражает. Из-за "ГОСТ"а моей шараги мой дип. рук стал норм.контролером.
 % Ох.еть
