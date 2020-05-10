@@ -17,7 +17,13 @@
 
 \sloppy
 
+\setcounter{tocdepth}{2}
+
 \newcommand{\No}{\textnumero}
+
+% Thank: https://stackoverflow.com/questions/2785260/hide-an-entry-from-toc-in-latex
+\newcommand{\nocontentsline}[3]{}
+\newcommand{\tocless}[2]{\bgroup\let\addcontentsline=\nocontentsline#1{#2}\egroup}
 
 \renewcommand{\ESKDcolumnXfIname}{Студент}
 \renewcommand{\ESKDcolumnXfIIname}{Консульт.}
@@ -33,6 +39,8 @@
 \ESKDsignature{\textnormal{РКСИ.ВКР20.09.02.03.2297.00ПЗ}}
 \ESKDauthor{Леммер}
 \ESKDnormContr{Ляхов}
+\ESKDchecker{Езепчук}
+\ESKDapprovedBy{Жабинская}
 
 \graphicspath{{img/}}
 
