@@ -16,6 +16,7 @@
 \usepackage{indentfirst}
 \usepackage{enumitem}
 \usepackage{caption}
+\usepackage{float}
 
 \def\centersection#1{\hspace{6.5cm} #1}
 
@@ -30,7 +31,7 @@
 \setlength{\cftbeforesecskip}{0pt}
 \setlength\parindent{5ex}
 
-\setlist{nolistsep,parsep=0pt,leftmargin=1.6cm}
+\setlist{nolistsep,parsep=0pt,leftmargin=1.6cm,wide}
 
 \setlist[2]{labelindent=2\parindent}
 
@@ -58,6 +59,7 @@
 % Меня это жутко раздражает. Из-за "ГОСТ"а моей шараги мой дип. рук стал норм.контролером.
 % Ох.еть
 
+\ESKDtitle{\textnormal{{\footnotesize Разработка серверной части для онлайн-конструктора конфигураций}}}
 \ESKDsignature{\textnormal{РКСИ.ВКР20.09.02.03.2297.00ПЗ}}
 \ESKDauthor{Леммер}
 \ESKDnormContr{Ляхов}
@@ -80,7 +82,7 @@
 
 \renewenvironment{enumerate}%
 {\begin{list}{\arabic{enumi})}
-      {\setlength{\leftmargin}{2.5em}%
+      {\setlength{\leftmargin}{1.7cm}%
        \setlength{\itemsep}{-\parsep}%
        \setlength{\topsep}{-\parskip}%
        \usecounter{enumi}}%
