@@ -31,6 +31,9 @@
 \setlength{\cftbeforesecskip}{0pt}
 \setlength\parindent{5ex}
 
+\setlist[enumerate,1]{label=\arabic*)}
+\setlist[enumerate,2]{label=\arabic*),leftmargin=1.5cm}
+
 \setlist{nolistsep,parsep=0pt,leftmargin=1.6cm,wide}
 
 \setlist[2]{labelindent=2\parindent,leftmargin=1.3cm}
@@ -78,15 +81,9 @@
 
 \linespread{1}
 
-\captionsetup[table]{format=hang,indention=-60pt,margin=20pt}
+\captionsetup[figure]{skip=0.5cm}
 
-\renewenvironment{enumerate}%
-{\begin{list}{\arabic{enumi})}
-      {\setlength{\leftmargin}{1.7cm}%
-       \setlength{\itemsep}{-\parsep}%
-       \setlength{\topsep}{-\parskip}%
-       \usecounter{enumi}}%
-}{\end{list}}
+\captionsetup[table]{format=hang,indention=-60pt,margin=20pt}
 
 \begin{document}
     \input{documents/title}
@@ -96,6 +93,8 @@
     \input{documents/intoduction}
     \newpage
     \input{documents/collection_requirements}
+    \newpage
+    \input{documents/design}
     \newpage
     \input{documents/documentation}
     \newpage
