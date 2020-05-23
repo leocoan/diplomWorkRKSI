@@ -11,7 +11,7 @@
 \usepackage{titlesec}
 \usepackage{tocloft}
 \usepackage{eqexpl}
-\usepackage{longtable}
+\usepackage{ltxtable}
 \usepackage{icomma}
 \usepackage{indentfirst}
 \usepackage{enumitem}
@@ -26,6 +26,7 @@
 \sloppy
 
 \setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{4}
 
 \setlength{\cftsubsecindent}{0cm}
 \setlength{\cftbeforesecskip}{0pt}
@@ -78,12 +79,16 @@
 \titleformat{\section}{\normalfont\normalsize}{\thesection}{1em}{}
 \titleformat{\subsection}{\normalfont\normalsize}{\thesubsection}{1em}{}
 \titleformat{\subsubsection}{\normalfont\normalsize}{\thesubsubsection}{1em}{}
+\titleformat{\paragraph}
+{\normalfont\normalsize}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{5ex}{1.5cm}{1.5cm}
 
 \linespread{1}
 
 \captionsetup[figure]{skip=0.5cm}
 
-\captionsetup[table]{format=hang,indention=-60pt,margin=20pt}
+\captionsetup[table]{format=hang,indention=-60pt,margin=5ex}
 
 \begin{document}
     \input{documents/title}
@@ -95,6 +100,8 @@
     \input{documents/collection_requirements}
     \newpage
     \input{documents/design}
+    \newpage
+    \input{documents/develop}
     \newpage
     \input{documents/documentation}
     \newpage
