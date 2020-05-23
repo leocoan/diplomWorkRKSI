@@ -42,9 +42,10 @@ frontend-разработчик.
     \text{ФОТ}_\text{год} = 30 000 * 12 \text{мес.} = 30 000 \text{руб.}
 \end{equation*}
 
-Теперь определм стоимость трудозатрат в час по формуле:
+Теперь определм стоимость трудозатрат в час по формуле \ref{ec:trudzat}:
 
 \begin{equation}
+    \label{ec:trudzat}
     \text{Ct}_\text{час} = \text{ФОТ} / N_\text{рв},
 \end{equation}
 
@@ -73,7 +74,7 @@ frontend-разработчик.
     \endfirsthead
     %
     \multicolumn{4}{l}%
-    {{\hspace{5ex} Продолжение таблицы \thetable}} \\ \hline
+    {{\hspace{5ex} Продолжение таблицы \thetable \vspace{0.5cm}}} \\ \hline
     \multicolumn{1}{|c|}{{\begin{tabular}[c]{@{}c@{}}Наименование\\ работ/услуг\end{tabular}}} &
     {\begin{tabular}[c]{@{}c@{}}Трудозатраты, \\ час\end{tabular}} &
     {\begin{tabular}[c]{@{}c@{}}Стоимость \\ трудозатрат в час, \\ руб\end{tabular}} &
@@ -108,9 +109,10 @@ frontend-разработчик.
     \item на обязательное социальное страхование от несчастных случаев на производстве и профессиональных заболеваний ~--- 0.2\%.
 \end{itemize}
 
-Для расчёта общих страховых взносов используется следующая формула:
+Для расчёта общих страховых взносов используется формула \ref{ec:strah}:
 
 \begin{equation}
+    \label{ec:strah}
     \text{C}_\text{страх-вз} = \text{ФОТ}_\text{год} * 30,2\% / 100\%,
 \end{equation}
 
@@ -159,7 +161,7 @@ frontend-разработчик.
 \end{equation}
 
 \begin{eqexpl}[18ex]
-    \item{$P_\text{интернет} + P_\text{тел.связь}$} Расходы на интернет, мобильную связь и т.д.;
+    \item{$\text{P}_\text{интернет} + P_\text{тел.связь}$} Расходы на интернет, мобильную связь и т.д.;
     \item{Кол-во дней(мес)} Среднее количество рабочий дней в месяце, дн.
 \end{eqexpl}
 
@@ -210,16 +212,16 @@ frontend-разработчик.
 на оплату труда как и расходы на рекламу, по формуле:
 
 \begin{equation}
-    P_\text{прочие} = \text{POT} * n_\text{прочие} / 100\%,
+    \text{P}_\text{прочие} = \text{POT} * n_\text{прочие} / 100\%,
 \end{equation}
 
 \begin{eqexpl}[6ex]
-    \item{$P_\text{прочие}$} Сумма прочих расходов, руб.;
-    \item{$n_\text{прочие}$} Норматив прочих расходов, \%
+    \item{$\text{P}_\text{прочие}$} Сумма прочих расходов, руб.;
+    \item{$\text{n}_\text{прочие}$} Норматив прочих расходов, \%
 \end{eqexpl}
 
 \begin{equation*}
-    P_\text{прочие} =  237938,28 * 10\% / 100\% = 23793,83 \text{руб}.
+    \text{P}_\text{прочие} =  237938,28 * 10\% / 100\% = 23793,83 \text{руб}.
 \end{equation*}
 
 \subsubsection{Расчёт общей суммы накладных расходов}
@@ -232,7 +234,7 @@ frontend-разработчик.
 \end{equation}
 
 \begin{eqexpl}[9ex]
-    \item{$P_\text{Накладные}$} Сумма накладных расходов, руб.
+    \item{$\text{P}_\text{Накладные}$} Сумма накладных расходов, руб.
 \end{eqexpl}
 
 \begin{equation*}
@@ -252,7 +254,7 @@ frontend-разработчик.
 Расчёт себестоимости работ по проекту, иными словами цену непосредственного создания
 программного продукта, привидена в таблице \ref{ec:table2}.
 
-\begin{longtable}[c]{|l|r|}
+\begin{longtable}[c]{|p{10cm}|r|}
     \caption{Себестоимость работ по созданию программного продукта}
     \label{ec:table2}\\
     \hline
@@ -400,7 +402,7 @@ frontend-разработчик.
     \endfirsthead
     %
     \multicolumn{2}{l}%
-    {{Продолжение таблицы \thetable}} \\ \hline
+    {{Продолжение таблицы \thetable \vspace{0.5cm}}} \\ \hline
     \multicolumn{1}{|c|}{{Наименование статей}} & {Сумма, руб} \\ \hline
     \endhead
     %
@@ -446,7 +448,7 @@ frontend-разработчик.
     Итого                                                                                                  & 69 & 181.91 & 12551,79 \\ \hline
 \end{longtable}
 
-\begin{longtable}[c]{|l|r|}
+\begin{longtable}[c]{|p{10cm}|r|}
     \caption{Расчет затрат на функционирование.
     }
     \label{ec:table6}\\
@@ -468,11 +470,11 @@ frontend-разработчик.
 эксплуатационных расходов и затрат на функционирование по формуле:
 
 \begin{equation}
-    C_\text{в} = \text{Э}_\text{р} + \text{З}_\text{ф}.
+    \text{C}_\text{в} = \text{Э}_\text{р} + \text{З}_\text{ф}.
 \end{equation}
 
 \begin{equation*}
-    C_\text{в} = 12551,79 + 1960 = 14511,79 руб.
+    \text{C}_\text{в} = 12551,79 + 1960 = 14511,79 руб.
 \end{equation*}
 
 Вывод: стоимость владения разработанным продуктом, составляет 14511,79 руб. в месяц.
@@ -486,7 +488,7 @@ frontend-разработчик.
 Отдельной строкой необходимо указать стоимость владения программным
 продуктом. Расчёт сметы представлен в таблице \ref{ec:table7}
 
-\begin{longtable}{|l|l|r|}
+\begin{longtable}[c]{|p{1.5cm}|p{11.5cm}|r|}
     \caption{Смета затрат на проект.}
     \label{ec:table7}\\
     \hline
@@ -495,15 +497,14 @@ frontend-разработчик.
       {\begin{tabular}[c]{c@{}c@{}}Сумма, руб.\end{tabular}} \\ \hline
     \endfirsthead
     %
-    \multicolumn{3}{l}%
-    {Продолжение таблицы \thetable} \\ \hline
+    \multicolumn{3}{l}{Продолжение таблицы \thetable \vspace{0.5cm}} \\ \hline
     \multicolumn{1}{|c|}{{\begin{tabular}[c]{@{}c@{}}№\\ п/п\end{tabular}}} &
     \multicolumn{1}{c|}{{Статьи смета затрат на проект}} &
     {\begin{tabular}[c]{@{}c@{}}Сумма, руб.\end{tabular}} \\ \hline
     \endhead
     %
     1 &
-      \begin{tabular}[c]{@{}l@{}}Затратны на создание программного\\ продукта(себестоимость работ)\end{tabular} &
+      \begin{tabular}[c]{@{}l@{}}Затратны на создание программного продукта\\ (себестоимость работ)\end{tabular} &
       396701,16 \\ \hline
                          & Расходы на оплату труда               & 237938,28  \\ \hline
                          & Страховые взносы                      & 71857,36   \\ \hline
