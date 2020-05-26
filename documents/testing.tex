@@ -1,0 +1,292 @@
+\section{Тестирование программного продукта}
+
+Тестирование любого программного продукта необходимо, так как позволяет выявлять ошибки и получать обратную связь от пользователей и/или тестировщиков.
+Для наиболее эффективного процесса тестирования выбираются оптимальные способы тестирования, а затем создаются тест-кейсы под уже выбранные методы.
+
+\subsection{Выбор метода обеспечения качества}
+
+Исходя из требований к тестированию необходимо провести его двумя способами:
+
+\begin{enumerate}
+    \item создать необходимые автоматические тесты;
+    \item вручную протестировать результат работы GraphQL-сервера, созданного в процессе работы.
+\end{enumerate}
+
+\subsection{План тестирования}
+
+Требуется провести тестирование работоспособности и качество
+реализации проекта «configCastle». В рамках плана следует перечислить
+программные составляющие и отдельные составляющие их функционала,
+подлежащие оценке качества, подходы и виды тестирования, используемые в
+данном процессе и график тестирования.
+
+\subsubsection{Программные составляющие, подлежающие тестированию}
+
+Следует провести тестирование следующих составляющих приложения:
+
+\begin{itemize}
+    \item возможность приложения работать базы данных, то есть записывать и получать данные;
+    \item ответы GraphQL-сервера, предусмотренных техническим заданием, используя окружение GraphiQL.
+\end{itemize}
+
+Автотесты исполняются с помощью системы pytest\_aiohttp, используя экосистему py.test.
+
+\subsubsection{Тест-план}
+
+Для корретного тестирования необходимо составить тест-план с где можно отслеживать какие именно тесты необходимо провести, чтобы
+убедиться в работоспобности приложения. Тест-план представлен в таблице \ref{dev:test_plan}.
+
+\begin{longtable}[c]{|l|l|}
+    \caption{Тест-план}
+    \label{dev:test_plan}\\
+    \hline
+    Идентификатор & Название тесты \\ \hline
+    \endfirsthead
+    %
+    \multicolumn{2}{c}%
+    {{\bfseries Table \thetable\ continued from previous page}} \\
+    \hline
+    Идентификатор & Название тесты \\ \hline
+    \endhead
+    %
+    1             &      Проверка query service(id: \textless{}Number\textgreater{})          \\ \hline
+    2             &      Проверка query services          \\ \hline
+    3             &      Проверка query file(id: \textless{}Number\textgreater{})          \\ \hline
+    4             &      Проверка query files          \\ \hline
+    5             &      Проверка mutation createFile          \\ \hline
+    6             &      Проверка mutation updateFile          \\ \hline
+    7             &      Првоерка mutation deleteFile         \\ \hline
+    8             &      Обновление файла с несуществующим id          \\ \hline
+\end{longtable}
+
+\subsubsection{Тест-кейсы}
+
+Для правильного тестирования были составлены подробные тест-кейсы или сценария тестирования, описывающий процесс тестирования
+каждого созданного запроса. Данные сценарии представлены в таблицах \ref{test:case_1}, \ref{test:case_2}, \ref{test:case_3}, \ref{test:case_4},
+\ref{test:case_5}, \ref{test:case_6}, \ref{test:case_7}, \ref{test:case_8}.
+
+\begin{longtable}[c]{|l|l|}
+    \caption{Тест-кейс №1}
+    \label{test:case_1}\\
+    \hline
+    Идентификатор & 1                                                                                                \\ \hline
+    \endfirsthead
+    %
+    \multicolumn{2}{l}%
+    {{Продолжение таблицы \thetable}} \\
+    \hline
+    \endhead
+    %
+    Название                            & Проверка query service(id: \textless{}Number\textgreater{})                                                            \\ \hline
+    Приоритет                           & Высокий                                                                                                               \\ \hline
+    Дата проведения                     & 22.04.2020                                                                                                            \\ \hline
+    Описание                            & \begin{tabular}[c]{@{}l@{}}Тестируется правильность возвращения\\ данных при использовании query service\end{tabular} \\ \hline
+    Предусловие                         & Отсутствует                                                                                                           \\
+    \pagebreak
+    Шаги тестирования &
+      \begin{tabular}[c]{@{}l@{}}1) Запустить graphiQL проекта;\\ 2) Использовать следующий запрос:\\      query \{\\           \hspace{2ex}service(id: 1) \{\\                 \hspace{4ex}name\\                 \hspace{4ex}id\\                 \hspace{4ex}data\\           \hspace{2ex}\}\\      \}\end{tabular} \\ \hline
+    Ожидаемый результат                 & \begin{tabular}[c]{@{}l@{}}Появление полей в виде ответа по структуре\\ совпадающих с запросом\end{tabular}           \\ \hline
+    Постусловие                         & Отсутсвует                                                                                                            \\ \hline
+    Фактический результат               & Совпадает с ожидаемым                                                                                                 \\ \hline
+    Статус                              & Пройден                                                                                                               \\ \hline
+\end{longtable}
+
+\begin{longtable}[c]{|l|l|}
+    \caption{Тест-кейс №2}
+    \label{test:case_2}\\
+    \hline
+    Идентификатор & 2                                                                                                \\ \hline
+    \endfirsthead
+    %
+    \multicolumn{2}{l}%
+    {{Продолжение таблицы \thetable}} \\
+    \hline
+    \endhead
+    %
+    Название                            & Проверка query services                                                            \\
+    Приоритет                           & Высокий                                                                                                               \\ \hline
+    Дата проведения                     & 22.04.2020                                                                                                            \\ \hline
+    Описание                            & \begin{tabular}[c]{@{}l@{}}Тестируется правильность возвращения\\ данных при использовании query services\end{tabular} \\ \hline
+    Предусловие                         & Отсутствует                                                                                                           \\ \hline
+    Шаги тестирования &
+      \begin{tabular}[c]{@{}l@{}}1) Запустить graphiQL проекта;\\ 2) Использовать следующий запрос:\\      query \{\\           \hspace{2ex}services\{\\                 \hspace{4ex}name\\                 \hspace{4ex}data\\           \hspace{2ex}\}\\      \}\end{tabular} \\
+    \pagebreak
+    Ожидаемый результат                 & \begin{tabular}[c]{@{}l@{}}Появление полей в виде ответа по структуре\\ совпадающих с запросом\end{tabular}           \\ \hline
+    Постусловие                         & Отсутсвует                                                                                                            \\ \hline
+    Фактический результат               & Совпадает с ожидаемым                                                                                                 \\ \hline
+    Статус                              & Пройден                                                                                                               \\ \hline
+\end{longtable}
+
+\begin{longtable}[c]{|l|l|}
+    \caption{Тест-кейс №3}
+    \label{test:case_3}\\
+    \hline
+    Идентификатор & 3                                                                                                \\ \hline
+    \endfirsthead
+    %
+    \multicolumn{2}{l}%
+    {{Продолжение таблицы \thetable}} \\
+    \hline
+    \endhead
+    %
+    Название                            & Проверка query file(id: \textless{}Number\textgreater{})                                                            \\ \hline
+    Приоритет                           & Высокий                                                                                                               \\ \hline
+    Дата проведения                     & 22.04.2020                                                                                                            \\ \hline
+    Описание                            & \begin{tabular}[c]{@{}l@{}}Тестируется правильность возвращения\\ данных при использовании query file\end{tabular} \\ \hline
+    Предусловие                         & Отсутствует                                                                                                           \\
+    Шаги тестирования &
+      \begin{tabular}[c]{@{}l@{}}1) Запустить graphiQL проекта;\\ 2) Использовать следующий запрос:\\      query \{\\           \hspace{2ex}file(id: 1)\{\\                 \hspace{4ex}name\\                 \hspace{4ex}id\\                 \hspace{4ex}data\\           \hspace{2ex}\}\\      \}\end{tabular} \\ \hline
+    Ожидаемый результат                 & \begin{tabular}[c]{@{}l@{}}Появление полей в виде ответа по структуре\\ совпадающих с запросом\end{tabular}           \\ \hline
+    Постусловие                         & Отсутсвует                                                                                                            \\ \hline
+    Фактический результат               & Совпадает с ожидаемым                                                                                                 \\ \hline
+    Статус                              & Пройден                                                                                                               \\ \hline
+\end{longtable}
+
+\begin{longtable}[c]{|l|l|}
+    \caption{Тест-кейс №4}
+    \label{test:case_4}\\
+    \hline
+    Идентификатор & 4                                                                                               \\ \hline
+    \endfirsthead
+    %
+    \multicolumn{2}{l}%
+    {{Продолжение таблицы \thetable}} \\
+    \hline
+    \endhead
+    %
+    Название                            & Проверка query files                                                         \\ \hline
+    Приоритет                           & Высокий                                                                                                               \\ \hline
+    Дата проведения                     & 23.04.2020                                                                                                            \\ \hline
+    Описание                            & \begin{tabular}[c]{@{}l@{}}Тестируется правильность возвращения\\ данных при использовании query files\end{tabular} \\ \hline
+    Предусловие                         & Отсутствует                                                                                                           \\ \hline
+    Шаги тестирования &
+      \begin{tabular}[c]{@{}l@{}}1) Запустить graphiQL проекта;\\ 2) Использовать следующий запрос:\\      query \{\\           \hspace{2ex}files\{\\                 \hspace{4ex}name\\                               \hspace{4ex}data\\           \hspace{2ex}\}\\      \}\end{tabular} \\ \hline
+    Ожидаемый результат                 & \begin{tabular}[c]{@{}l@{}}Появление полей в виде ответа по структуре\\ совпадающих с запросом\end{tabular}           \\ \hline
+    Постусловие                         & Отсутсвует                                                                                                            \\ \hline
+    Фактический результат               & Совпадает с ожидаемым                                                                                                 \\ \hline
+    Статус                              & Пройден                                                                                                               \\ \hline
+\end{longtable}
+
+\begin{longtable}[c]{|l|l|}
+    \caption{Тест-кейс №5}
+    \label{test:case_5}\\
+    \hline
+    Идентификатор & 5                                                                                                \\ \hline
+    \endfirsthead
+    %
+    \multicolumn{2}{l}%
+    {{Продолжение таблицы \thetable}} \\
+    \hline
+    \endhead
+    %
+    Название                            & Проверка mutation createFile                                                           \\ \hline
+    Приоритет                           & Высокий                                                                                                               \\ \hline
+    Дата проведения                     & 23.04.2020                                                                                                            \\ \hline
+    Описание                            & \begin{tabular}[c]{@{}l@{}}Тестируется правильность возвращения\\ данных при использовании query service\end{tabular} \\ \hline
+    Предусловие                         & Наличие файла с id 0                                                                                                           \\
+    Шаги тестирования &
+      \begin{tabular}[c]{@{}l@{}}1) Запустить graphiQL проекта;\\ 2) Использовать следующий запрос:\\      mutation \{\\           \hspace{2ex}createFile\{input: \{\\ \hspace{6ex} data: \textquotedblleft\{\}\textquotedblright,\\ \hspace{6ex} name: `` test\_file'',\\ \hspace{6ex} configType: DOCKER\_COMPOSE, \\ \hspace{2ex}) \{\\                 \hspace{4ex}name\\                 \hspace{4ex}id\\                 \hspace{4ex}data\\           \hspace{2ex}\}\\      \}\end{tabular} \\ \hline
+    Ожидаемый результат                 & \begin{tabular}[c]{@{}l@{}}Появление полей в виде ответа по структуре\\ совпадающих с запросом\end{tabular}           \\ \hline
+    Постусловие                         & Отсутсвует                                                                                                            \\ \hline
+    Фактический результат               & Файл создался с id 1                                                                                                 \\
+    Статус                              & Провален                                                                                                               \\ \hline
+\end{longtable}
+
+\begin{longtable}[c]{|l|l|}
+    \caption{Тест-кейс №6}
+    \label{test:case_6}\\
+    \hline
+    Идентификатор & 6                                                                                                \\ \hline
+    \endfirsthead
+    %
+    \multicolumn{2}{l}%
+    {{Продолжение таблицы \thetable}} \\
+    \hline
+    \endhead
+    %
+    Название                            & Проверка mutation updateFile                                                           \\ \hline
+    Приоритет                           & Высокий                                                                                                               \\ \hline
+    Дата проведения                     & 24.04.2020                                                                                                            \\ \hline
+    Описание                            & \begin{tabular}[c]{@{}l@{}}Тестируется правильность возвращения\\ данных при использовании updateFile\\ и обновление файла\end{tabular} \\ \hline
+    Предусловие                         & Существование файла с существующим id                                                                                                           \\
+    Шаги тестирования &
+      \begin{tabular}[c]{@{}l@{}}1) Запустить graphiQL проекта;\\ 2) Использовать следующий запрос:\\      mutation \{\\           \hspace{2ex}updateFile\{input: \{\\ \hspace{6ex} id: 1 \\ \hspace{6ex} data: \textquotedblleft\{\}\textquotedblright,\\ \hspace{6ex} name: `` updated\_file'',\\ \hspace{6ex} configType: DOCKER\_COMPOSE, \\ \hspace{2ex}) \{\\                 \hspace{4ex}name\\                 \hspace{4ex}id\\                 \hspace{4ex}data\\           \hspace{2ex}\}\\      \}\end{tabular} \\ \hline
+    Ожидаемый результат                 & \begin{tabular}[c]{@{}l@{}}Появление полей в виде ответа по структуре\\ совпадающих с запросом\end{tabular}           \\ \hline
+    Постусловие                         & Отсутствует                                                                                                            \\ \hline
+    Фактический результат               & Файл обновился                                                                                                 \\ \hline
+    Статус                              & Пройден                                                                                                               \\ \hline
+\end{longtable}
+
+\begin{longtable}[c]{|l|l|}
+    \caption{Тест-кейс №7}
+    \label{test:case_7}\\
+    \hline
+    Идентификатор & 7                                                                                                \\ \hline
+    \endfirsthead
+    %
+    \multicolumn{2}{l}%
+    {{Продолжение таблицы \thetable}} \\
+    \hline
+    \endhead
+    %
+    Название                            & Проверка mutation deleteFile                                                           \\ \hline
+    Приоритет                           & Высокий                                                                                                               \\ \hline
+    Дата проведения                     & 25.04.2020                                                                                                            \\ \hline
+    Описание                            & \begin{tabular}[c]{@{}l@{}}Тестируется правильность возвращения\\ данных при использовании mutation deleteFile\end{tabular} \\ \hline
+    Предусловие                         & Файл с id 1                                                                                                           \\
+    Шаги тестирования &
+      \begin{tabular}[c]{@{}l@{}}1) Запустить graphiQL проекта;\\ 2) Использовать следующий запрос:\\      mutation \{\\           \hspace{2ex}deleteFile(id: 1) \{\\                 \hspace{4ex}name\\                 \hspace{4ex}id\\                 \hspace{4ex}data\\           \hspace{2ex}\}\\      \}\end{tabular} \\ \hline
+    Ожидаемый результат                 & \begin{tabular}[c]{@{}l@{}}Появление полей в виде ответа по структуре\\ совпадающих с запросом\end{tabular}           \\ \hline
+    Постусловие                         & Файл должен удалится                                                                                                            \\ \hline
+    Фактический результат               & Файл удалён и появились указанные поля                                                                                                 \\ \hline
+    Статус                              & Пройден                                                                                                               \\ \hline
+\end{longtable}
+
+\begin{longtable}[c]{|l|l|}
+    \caption{Тест-кейс №8}
+    \label{test:case_8}\\
+    \hline
+    Идентификатор & 8                                                                                                \\ \hline
+    \endfirsthead
+    %
+    \multicolumn{2}{l}%
+    {{Продолжение таблицы \thetable}} \\
+    \hline
+    \endhead
+    %
+    Название                            & Обновление файла с несуществующим id    \\ \hline
+    Приоритет                           & Высокий                                                                                                               \\ \hline
+    Дата проведения                     & 25.04.2020                                                                                                            \\ \hline
+    Описание                            & \begin{tabular}[c]{@{}l@{}}Тестируется невозможность\\ изменения файла с несуществующим id\end{tabular} \\ \hline
+    Предусловие                         & Файл с id 1                                                                                                           \\
+    Шаги тестирования &
+      \begin{tabular}[c]{@{}l@{}}1) Запустить graphiQL проекта;\\ 2) Использовать следующий запрос:\\      mutation \{\\           \hspace{2ex}deleteFile(id: 666) \{\\                 \hspace{4ex}name\\                 \hspace{4ex}id\\                 \hspace{4ex}data\\           \hspace{2ex}\}\\      \}\end{tabular} \\ \hline
+    Ожидаемый результат                 & \begin{tabular}[c]{@{}l@{}}Выброс исключения: ``File does not exist''\end{tabular}           \\ \hline
+    Постусловие                         & Отсутствует                                                                                                            \\ \hline
+    Фактический результат               & Выброс исключения ``File does not exist''                                                                                                 \\ \hline
+    Статус                              & Пройден                                                                                                               \\ \hline
+\end{longtable}
+
+
+\subsection{Баг-репорты}
+
+В процессе тестирования были выявлени два бага общая информациях о которых привидена в таблице \ref{test:bug_all}.
+
+\begin{longtable}[c]{|l|l|l|l|}
+    \caption{Зафиксированные баги}
+    \label{test:bug_all}\\
+    \hline
+    № & Название тесты                                                                                                                       & Критичность & Решен \\ \hline
+    \endfirsthead
+    %
+    \multicolumn{4}{c}%
+    {{\bfseries Table \thetable\ continued from previous page}} \\
+    \hline
+    № & Название тесты                                                                                                                       & Критичность & Решен \\ \hline
+    \endhead
+    %
+    1 & \begin{tabular}[c]{@{}l@{}}Не создаётся первый\\ файл в базе данных\end{tabular}                                                     & Высокая     &   \checkmark    \\ \hline
+    2 & \begin{tabular}[c]{@{}l@{}}Периодически GraphQL\\ при обновлении файла \\ возвращает None, однако\\ файл обновляется.\end{tabular}   & Низкая      &   \checkmark    \\ \hline
+\end{longtable}
+
+Первый баг зафиксиорован в репозитории проекта, где он также помечен как решённый.
