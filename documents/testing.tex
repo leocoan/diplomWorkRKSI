@@ -73,7 +73,7 @@
     \endfirsthead
     %
     \multicolumn{2}{l}%
-    {{Продолжение таблицы \thetable}} \\
+    {{Продолжение таблицы \thetable \vspace{0.5cm}}} \\
     \hline
     \endhead
     %
@@ -99,7 +99,7 @@
     \endfirsthead
     %
     \multicolumn{2}{l}%
-    {{Продолжение таблицы \thetable}} \\
+    {{Продолжение таблицы \thetable \vspace{0.5cm}}} \\
     \hline
     \endhead
     %
@@ -125,7 +125,7 @@
     \endfirsthead
     %
     \multicolumn{2}{l}%
-    {{Продолжение таблицы \thetable}} \\
+    {{Продолжение таблицы \thetable \vspace{0.5cm}}} \\
     \hline
     \endhead
     %
@@ -150,7 +150,7 @@
     \endfirsthead
     %
     \multicolumn{2}{l}%
-    {{Продолжение таблицы \thetable}} \\
+    {{Продолжение таблицы \thetable \vspace{0.5cm}}} \\
     \hline
     \endhead
     %
@@ -175,7 +175,7 @@
     \endfirsthead
     %
     \multicolumn{2}{l}%
-    {{Продолжение таблицы \thetable}} \\
+    {{Продолжение таблицы \thetable \vspace{0.5cm}}} \\
     \hline
     \endhead
     %
@@ -183,12 +183,12 @@
     Приоритет                           & Высокий                                                                                                               \\ \hline
     Дата проведения                     & 23.04.2020                                                                                                            \\ \hline
     Описание                            & \begin{tabular}[c]{@{}l@{}}Тестируется правильность возвращения\\ данных при использовании query service\end{tabular} \\ \hline
-    Предусловие                         & Наличие файла с id 0                                                                                                           \\
+    Предусловие                         & Отстуствие файлов в базе данных                                                                                                           \\
     Шаги тестирования &
       \begin{tabular}[c]{@{}l@{}}1) Запустить graphiQL проекта;\\ 2) Использовать следующий запрос:\\      mutation \{\\           \hspace{2ex}createFile\{input: \{\\ \hspace{6ex} data: \textquotedblleft\{\}\textquotedblright,\\ \hspace{6ex} name: `` test\_file'',\\ \hspace{6ex} configType: DOCKER\_COMPOSE, \\ \hspace{2ex}) \{\\                 \hspace{4ex}name\\                 \hspace{4ex}id\\                 \hspace{4ex}data\\           \hspace{2ex}\}\\      \}\end{tabular} \\ \hline
     Ожидаемый результат                 & \begin{tabular}[c]{@{}l@{}}Появление полей в виде ответа по структуре\\ совпадающих с запросом\end{tabular}           \\ \hline
     Постусловие                         & Отсутсвует                                                                                                            \\ \hline
-    Фактический результат               & Файл создался с id 1                                                                                                 \\
+    Фактический результат               & Файл создался с id 1                                                                                                 \\ \hline
     Статус                              & Провален                                                                                                               \\ \hline
 \end{longtable}
 
@@ -200,7 +200,7 @@
     \endfirsthead
     %
     \multicolumn{2}{l}%
-    {{Продолжение таблицы \thetable}} \\
+    {{Продолжение таблицы \thetable \vspace{0.5cm}}} \\
     \hline
     \endhead
     %
@@ -225,7 +225,7 @@
     \endfirsthead
     %
     \multicolumn{2}{l}%
-    {{Продолжение таблицы \thetable}} \\
+    {{Продолжение таблицы \thetable \vspace{0.5cm}}} \\
     \hline
     \endhead
     %
@@ -250,7 +250,7 @@
     \endfirsthead
     %
     \multicolumn{2}{l}%
-    {{Продолжение таблицы \thetable}} \\
+    {{Продолжение таблицы \thetable \vspace{0.5cm}}} \\
     \hline
     \endhead
     %
@@ -258,10 +258,10 @@
     Приоритет                           & Высокий                                                                                                               \\ \hline
     Дата проведения                     & 25.04.2020                                                                                                            \\ \hline
     Описание                            & \begin{tabular}[c]{@{}l@{}}Тестируется невозможность\\ изменения файла с несуществующим id\end{tabular} \\ \hline
-    Предусловие                         & Файл с id 1                                                                                                           \\
+    Предусловие                         & Файл с id 1                                                                                                           \\ \hline
     Шаги тестирования &
-      \begin{tabular}[c]{@{}l@{}}1) Запустить graphiQL проекта;\\ 2) Использовать следующий запрос:\\      mutation \{\\           \hspace{2ex}deleteFile(id: 666) \{\\                 \hspace{4ex}name\\                 \hspace{4ex}id\\                 \hspace{4ex}data\\           \hspace{2ex}\}\\      \}\end{tabular} \\ \hline
-    Ожидаемый результат                 & \begin{tabular}[c]{@{}l@{}}Выброс исключения: ``File does not exist''\end{tabular}           \\ \hline
+      \begin{tabular}[c]{@{}l@{}}1) Запустить graphiQL проекта;\\ 2) Использовать следующий запрос:\\      mutation \{\\           \hspace{2ex}deleteFile(id: 666) \{                \hspace{4ex}id\\                           \hspace{2ex}\}\\      \}\end{tabular} \\ \hline
+    Ожидаемый результат                 & \begin{tabular}[c]{@{}l@{}}Выброс исключения: ``File does not exist''\end{tabular}           \\
     Постусловие                         & Отсутствует                                                                                                            \\ \hline
     Фактический результат               & Выброс исключения ``File does not exist''                                                                                                 \\ \hline
     Статус                              & Пройден                                                                                                               \\ \hline
